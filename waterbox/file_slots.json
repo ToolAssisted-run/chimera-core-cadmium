@@ -1,0 +1,29 @@
+{
+  "_comment": "This file lists the kinds of file a CHIP-8 project can hold. Chimera's New Project window is built from it. A project is one program.",
+  "slots": [
+    {
+      "id": "program",
+      "title": "Program",
+      "min": 1,
+      "max": 1,
+      "formats": [
+        "ch8",
+        "sc8",
+        "xo8",
+        "mc8",
+        "ch10",
+        "c8x",
+        "c8e",
+        "hc8",
+        "c8tp",
+        "c8b",
+        "8o",
+        "gif",
+        "bin",
+        "ram",
+        "vip"
+      ],
+      "help": "The CHIP-8 program. Its extension says which kind of CHIP-8 it is for: .ch8 (the kind is worked out from the program), .sc8 SUPER-CHIP, .xo8 XO-CHIP, .mc8 MegaChip, .ch10 CHIP-10, .c8x CHIP-8X, .c8e CHIP-8E, .hc8 a program with COSMAC VIP machine code in it, .c8tp the VIP's 64x64 mode, .c8b a file holding versions for several kinds. An Octo cartridge (.gif) and an Octo source file (.8o) are compiled when the project starts; a source file that includes other files is not supported. A .bin, .ram or .vip file is loaded into a bare COSMAC VIP with no CHIP-8. Nothing else is needed: the machines' own programs are part of Cadmium."
+    }
+  ]
+}

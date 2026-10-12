@@ -1,0 +1,27 @@
+{
+  "_comment": [
+    "Default bindings for the keypad this package declares: the way CHIP-8 emulators",
+    "usually lay the sixteen keys on a keyboard. The keypad's four rows, 1 2 3 C / 4 5 6 D /",
+    "7 8 9 E / A 0 B F, are the keyboard's 1 2 3 4 / Q W E R / A S D F / Z X C V."
+  ],
+  "AllTrollers": {
+    "CHIP-8 Keypad": {
+      "Key 1": "Number1",
+      "Key 2": "Number2",
+      "Key 3": "Number3",
+      "Key C": "Number4",
+      "Key 4": "Q",
+      "Key 5": "W",
+      "Key 6": "E",
+      "Key D": "R",
+      "Key 7": "A",
+      "Key 8": "S",
+      "Key 9": "D",
+      "Key E": "F",
+      "Key A": "Z",
+      "Key 0": "X",
+      "Key B": "C",
+      "Key F": "V"
+    }
+  }
+}

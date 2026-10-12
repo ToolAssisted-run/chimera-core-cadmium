@@ -1,0 +1,31 @@
+diff --git a/src/chip8emuhostex.cpp b/src/chip8emuhostex.cpp
+index 8c0adb9..d7fc0d7 100644
+--- a/src/chip8emuhostex.cpp
++++ b/src/chip8emuhostex.cpp
+@@ -45,7 +45,9 @@ namespace emu {
+ Chip8EmuHostEx::Chip8EmuHostEx()
+ : _librarian(_cfg)
+ {
+-#ifndef PLATFORM_WEB
++#if !defined(PLATFORM_WEB) && !defined(CHIMERA_CORE)
++    // chimera: a core reads no settings file of the user's and lists no
++    // directory; what it is told comes from the frontend.
+     _cfgPath = (fs::path(dataPath())/"config.json").string();
+     if(_cfg.load(_cfgPath)) {
+         _options = _cfg.emuOptions;
+@@ -252,7 +254,15 @@ bool Chip8EmuHostEx::loadBinary(std::string filename, const uint8_t* data, size_
+     if(endsWith(filename, ".8o")) {
+         c8c = std::make_unique<emu::OctoCompiler>();
+         source.assign((const char*)fileData.data(), fileData.size());
++#ifdef CHIMERA_CORE
++        // chimera: the source is compiled from the bytes that were handed
++        // over, as a cartridge's is below, and not read again by its name:
++        // the same in a sandbox and out of one. A source that includes
++        // other files is not supported.
++        if(c8c->compile(filename, source.data(), source.data() + source.size(), false).resultType == emu::CompileResult::eOK)
++#else
+         if(c8c->compile(filename).resultType == emu::CompileResult::eOK)
++#endif
+         {
+             if(c8c->codeSize() < _chipEmu->memSize() - _options.startAddress) {
+                 romImage.assign(c8c->code(), c8c->code() + c8c->codeSize());

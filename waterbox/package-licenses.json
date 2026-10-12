@@ -1,0 +1,104 @@
+{
+  "package": "cadmium",
+  "effectiveTerms": "MIT",
+  "commercialUse": "allowed",
+  "note": "The core is the Cadmium emulator's machines (MIT) built with this repository's patches (MIT) and integration (MIT). Compiled in with it: Chiplet, {fmt}, the ghc filesystem and utility headers, nlohmann/json and magic_enum (all MIT); fast_float (MIT, Apache-2.0 or BSL-1.0, at the user's choice); bit-lite (BSL-1.0); a SHA-1 implementation, stdendian and stb_image (public domain). Chiplet's Octo compiler is a C++ version of the one in John Earnest's C-Octo (MIT). Cadmium's source contains, as data, the small programs the emulated computers were sold or published with: the COSMAC VIP's monitor and RCA's CHIP-8 interpreters (1977-78), and CHIPOS for the DREAM 6800 (Michael J. Bauer, 1978, used by Cadmium with his permission) with Tobias V. Langhoff's CHIPOSLO. The package contains no CHIP-8 program.",
+  "components": [
+    {
+      "name": "chimera-core-cadmium (integration and patches)",
+      "license": "MIT",
+      "url": "https://github.com/ToolAssisted-run/chimera-core-cadmium",
+      "commit": "{selfCommit}",
+      "file": "LICENSE",
+      "sourceUrl": "https://github.com/ToolAssisted-run/chimera-core-cadmium/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "Cadmium",
+      "license": "MIT",
+      "url": "https://github.com/gulrak/cadmium",
+      "commit": "{submodule:extern/cadmium}",
+      "file": "extern/cadmium/LICENSE",
+      "sourceUrl": "https://github.com/gulrak/cadmium/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "Chiplet",
+      "license": "MIT",
+      "url": "https://github.com/gulrak/chiplet",
+      "commit": "{submodule:extern/chiplet}",
+      "file": "extern/chiplet/LICENSE",
+      "sourceUrl": "https://github.com/gulrak/chiplet/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "C-Octo (the Octo compiler Chiplet's is a version of)",
+      "license": "MIT",
+      "url": "https://github.com/JohnEarnest/c-octo",
+      "file": "extern/cadmium/external/c-octo/LICENSE.txt"
+    },
+    {
+      "name": "{fmt}",
+      "license": "MIT",
+      "url": "https://github.com/fmtlib/fmt",
+      "commit": "{submodule:extern/fmt}",
+      "file": "extern/fmt/LICENSE.rst",
+      "sourceUrl": "https://github.com/fmtlib/fmt/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "ghc::filesystem",
+      "license": "MIT",
+      "url": "https://github.com/gulrak/filesystem",
+      "commit": "{submodule:extern/ghc-filesystem}",
+      "file": "extern/ghc-filesystem/LICENSE",
+      "sourceUrl": "https://github.com/gulrak/filesystem/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "ghc utility headers (in Chiplet)",
+      "license": "MIT",
+      "url": "https://github.com/gulrak/chiplet",
+      "file": "extern/chiplet/external/ghc/LICENSE"
+    },
+    {
+      "name": "fast_float",
+      "license": "MIT (also offered under Apache-2.0 and BSL-1.0)",
+      "url": "https://github.com/fastfloat/fast_float",
+      "commit": "{submodule:extern/fast_float}",
+      "file": "extern/fast_float/LICENSE-MIT",
+      "sourceUrl": "https://github.com/fastfloat/fast_float/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "nlohmann/json",
+      "license": "MIT",
+      "url": "https://github.com/nlohmann/json",
+      "file": "extern/cadmium/external/nlohmann/LICENSE.MIT"
+    },
+    {
+      "name": "magic_enum (its terms are at the top of the header)",
+      "license": "MIT",
+      "url": "https://github.com/Neargye/magic_enum",
+      "file": "extern/cadmium/external/magic/magic_enum.hpp"
+    },
+    {
+      "name": "bit-lite (its terms are at the top of the header)",
+      "license": "BSL-1.0",
+      "url": "https://github.com/martinmoene/bit-lite",
+      "file": "extern/chiplet/external/nonstd/bit.hpp"
+    },
+    {
+      "name": "SHA-1 (public domain)",
+      "license": "Unlicense",
+      "url": "https://github.com/983/SHA1",
+      "file": "extern/cadmium/external/sha1/LICENSE"
+    },
+    {
+      "name": "stdendian (public domain; said at the top of the header)",
+      "license": "public domain",
+      "url": "https://github.com/michaeljclark/stdendian",
+      "file": "extern/cadmium/external/stdendian/stdendian.h"
+    },
+    {
+      "name": "stb_image (public domain or MIT; its terms are at the end of the header)",
+      "license": "public domain or MIT",
+      "url": "https://github.com/nothings/stb",
+      "file": "extern/chiplet/include/chiplet/stb_image.h"
+    }
+  ]
+}

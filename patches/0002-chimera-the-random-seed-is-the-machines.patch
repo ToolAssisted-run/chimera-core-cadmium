@@ -1,0 +1,15 @@
+diff --git a/src/emulation/chip8cores.cpp b/src/emulation/chip8cores.cpp
+index da9c7f3..041ddd9 100644
+--- a/src/emulation/chip8cores.cpp
++++ b/src/emulation/chip8cores.cpp
+@@ -80,6 +80,10 @@ void Chip8EmulatorFP::setHandler()
+     if(_options.advanced.contains("random")) {
+         randomGen = _options.advanced.at("random");
+         _randomSeed = _options.advanced.at("seed");
++        // chimera: the seed is the simple generator's as well, which upstream
++        // always starts at 12345
++        _simpleRandSeed = _options.advanced.at("seed");
++        _simpleRandState = _simpleRandSeed;
+     }
+     if(randomGen == "rand-lcg")
+         on(0xF000, 0xC000, &Chip8EmulatorFP::opCxnn_randLCG);
