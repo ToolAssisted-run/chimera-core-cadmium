@@ -7,7 +7,7 @@ name: chimera waterbox core
 # the whole test script runs on a public runner and none of it is skipped.
 #   - the native build and the sandboxed core give the same results for
 #     eleven machines, with savestates and with keys;
-#   - the package runs in Chimera's headless runner;
+#   - the package runs in Chimera's headless runner, and in its window;
 #   - Chimera's own checks of the package: it loads, and what it declares
 #     (keys, settings, file types) is well formed.
 
@@ -62,7 +62,7 @@ jobs:
         # links none of them.
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends meson ninja-build build-essential cmake pkg-config python3 mono-complete libgl1-mesa-dev libegl-dev libx11-dev libxext-dev libasound2-dev
+          sudo apt-get install -y --no-install-recommends meson ninja-build build-essential cmake pkg-config python3 mono-complete xvfb libgl1-mesa-dev libegl-dev libx11-dev libxext-dev libasound2-dev
 
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
@@ -120,6 +120,12 @@ jobs:
           cat gate.out
           [ "$rc" -eq 0 ]
           grep -q ' 0 failed, 0 skipped$' gate.out
+
+      - name: Run the window test
+        # The package loaded by Chimera's own window (under Mono, on a
+        # virtual display): the machine's memory against the native build's,
+        # a setting, and the keys.
+        run: bash ./waterbox/tests/run-frontend.sh --chimera-root "$GITHUB_WORKSPACE/chimera-checkout"
 
       - name: Chimera's checks of the package
         working-directory: chimera-checkout

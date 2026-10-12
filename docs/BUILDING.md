@@ -95,6 +95,19 @@ Cadmium carries. Nothing has to be supplied.
   Chimera's headless runner: a movie with keys recorded and played back,
   with and without savestates around every frame.
 
+The window test is a script of its own, because it needs more than the rest
+(mono, Xvfb, and Chimera's window built with `dotnet build`):
+
+```sh
+bash waterbox/tests/run-frontend.sh --chimera-root <chimera>
+```
+
+It loads the package in Chimera's own window, on a virtual display with
+nobody at it, and asks three things: that a program's memory after 300
+frames is the native build's (`window:memory`), that a setting made in
+Chimera's configuration reaches the machine (`window:setting`), and that the
+keys the package ships become Chimera's (`window:keys`).
+
 Chimera's own checks of the package (it loads, and its keys, settings and
 file types are well formed) are run from the Chimera checkout:
 
@@ -126,8 +139,8 @@ empty movie has no frames to play.
 ## What CI does
 
 `.github/workflows/chimera.yml` builds everything above from a fresh clone
-on a public runner, runs the whole test script and Chimera's package checks,
-and publishes the package. Nothing is skipped there: the workflow fails if
+on a public runner, runs the whole test script, the window test and
+Chimera's package checks, and publishes the package. Nothing is skipped there: the workflow fails if
 the script's last line is not "0 failed, 0 skipped".
 
 ## When something goes wrong

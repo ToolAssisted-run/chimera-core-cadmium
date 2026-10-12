@@ -16,7 +16,8 @@ published: the repository is local, with no remote.
 - Savestates work, in the same process and carried into another.
 - As a package it runs in Chimera's headless runner (`chimera-run`), on
   Linux and on Windows, with the same pictures on both.
-- Chimera's window has not run it. Nobody has played a game on it.
+- Chimera's window loads it, under a test script with nobody at it. Nobody
+  has played a game on it.
 
 ## The pin
 
@@ -200,6 +201,11 @@ The test script, `waterbox/run-gate.sh`, with `CHIMERA_ROOT` set: 12 tests,
   difference. A state carried into another process: no difference (a state
   of MegaChip's 16 MiB machine is 945,343 bytes).
 - Chimera's package checks: 17 of 17.
+- The window test (`waterbox/tests/run-frontend.sh`), 3 of 3: in Chimera's
+  own window, under Mono on a virtual display, a first-generation CHIP-8
+  game's memory after 300 frames is the native build's; with Random Seed
+  777 set in Chimera's configuration it is another, and the native build's
+  with that seed; and the sixteen keys the package ships become Chimera's.
 - Windows: `chimera-run.exe` with the package gives the pictures Linux
   gives, file for file, for a game played from a movie with keys (also with
   a savestate around every frame), for the COSMAC VIP, and for MegaChip
@@ -217,6 +223,8 @@ Each test was seen to fail once:
   hand: 64 of 8,192 pixels differ;
 - the picture's size: the first table said 64x32 for the DREAM 6800, which
   is 64x128, and the test said so;
+- the window test's memory comparison has its control beside it: the same
+  comparison with another seed must differ from the first, and does;
 - the test script's first version failed six tests of its own making (a
   shell function's variables are the script's, and two functions overwrote
   a loop's), and `frontend:` tests in an earlier core taught that
@@ -224,8 +232,9 @@ Each test was seen to fail once:
 
 ## What is not done
 
-- Chimera's window has not run the core: no project made in the New Project
-  window, no TAStudio, no key pressed by a person.
+- Nobody has used the core in Chimera's window: no project made in the New
+  Project window, no TAStudio, no key pressed by a person. The window test
+  loads a program and reads its memory, and that is all it shows.
 - Cadmium's "quirks" (eighteen switches, such as whether a shift uses one
   register or two) are not settings. A variant sets them all, and the table
   of known programs sets them for the programs it knows; a program that

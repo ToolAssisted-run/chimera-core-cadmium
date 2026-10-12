@@ -36,7 +36,8 @@ design log, with what was decided, why, and what was measured.
 - `waterbox/*.sh` - `setup-guest.sh` (configures the sandbox build),
   `build-package.sh`, `run-gate.sh` (the test script), `apply-patches.sh`
   and `make-patches.sh`.
-- `waterbox/tests/` - helpers of the test script.
+- `waterbox/tests/` - the window test (`run-frontend.sh`, with its Lua
+  scripts and its helpers) and the helpers of the test script.
 - `waterbox/waterbox.config`, `file_slots.json`, `default_keybinds.json`,
   `package-licenses.json` - what the package declares. Written by hand.
 - `.github/workflows/chimera.yml` - CI: build, test, publish.
@@ -50,11 +51,14 @@ meson setup build/meson-native -Dminibox_dir=<chimera>/extern/chimera-common-min
 ninja -C build/meson-native
 waterbox/build-package.sh -r <chimera>
 CHIMERA_ROOT=<chimera> waterbox/run-gate.sh
+bash waterbox/tests/run-frontend.sh --chimera-root <chimera>
 ```
 
 The test script must end with `0 failed, 0 skipped`: every program it runs
-comes with the submodules, so nothing is missing anywhere. Run it before
-every commit that changes the core, and say in the commit what it printed.
+comes with the submodules, so nothing is missing anywhere. The last line is
+the window test: the package in Chimera's own window, with nobody at it
+(it needs mono, Xvfb and Chimera's window built). Run both before every
+commit that changes the core, and say in the commit what they printed.
 
 ## Rules
 

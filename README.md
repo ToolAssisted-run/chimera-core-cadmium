@@ -11,8 +11,8 @@ on calculators and on many machines that never existed. The core is built on
 
 New. It runs Cadmium's and C-Octo's own test and example programs, with
 picture, sound, keys and savestates, and gives the same results in the
-sandbox as a plain native build does. Nobody has played a game on it in
-Chimera's window yet; only Chimera's headless runner has run it.
+sandbox as a plain native build does. Chimera's window has loaded it only
+under a test script; nobody has played a game on it yet.
 
 - The picture is the emulated machine's own, so it is the same on every
   computer and needs no graphics card.
