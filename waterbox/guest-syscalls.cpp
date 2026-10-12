@@ -6,15 +6,33 @@
 // list it in its file browser. In a sandbox there are files mounted by name
 // and no folders. So a path is "there" when it can be opened, and what it is
 // is what the open file says; anything else is not there.
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
 #include <cerrno>
 #include <fcntl.h>
 #include <sys/stat.h>
+#include <sys/syscall.h>
 #include <unistd.h>
 
 extern "C" {
 
-int fstatat(int, const char* path, struct stat* st, int)
+// The C library's fstat() is fstatat() of an empty path on an open file, so
+// this function is asked both things: about an open file (answered by the
+// system call the sandbox does have), and about a name (answered by
+// opening it).
+int fstatat(int dirfd, const char* path, struct stat* st, int flags)
 {
+  if (path && !*path && (flags & AT_EMPTY_PATH))
+  {
+    const long r = syscall(SYS_fstat, dirfd, st);
+    if (r != 0)
+    {
+      errno = EBADF;
+      return -1;
+    }
+    return 0;
+  }
   if (!path || !*path)
   {
     errno = ENOENT;
@@ -26,9 +44,14 @@ int fstatat(int, const char* path, struct stat* st, int)
     errno = ENOENT;
     return -1;
   }
-  const int result = fstat(fd, st);
+  const long r = syscall(SYS_fstat, fd, st);
   close(fd);
-  return result;
+  if (r != 0)
+  {
+    errno = EIO;
+    return -1;
+  }
+  return 0;
 }
 
 int stat(const char* path, struct stat* st)
