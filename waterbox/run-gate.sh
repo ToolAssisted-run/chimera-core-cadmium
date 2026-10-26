@@ -22,6 +22,28 @@ runwbx="$root/build/meson-native/run-wbx"
 core="$root/build/meson-guest/core.wbx"
 cd="$root/extern/cadmium"
 work="$(mktemp -d)"
+# A game runs only in a project (Chimera, 2026-10-26): crun_game <package>
+# <game> <movie> [chimera-run's options] makes one of the game and the movie,
+# with any --settings and --firmware given, and runs it with the rest.
+crun_quote() { printf "'%s'" "$(printf '%s' "$1" | sed "s/'/'\\\\''/g")"; }
+crun_game() {
+	cg_pkg="$1" cg_game="$2" cg_movie="$3" cg_made=""
+	shift 3
+	cg_n=$#
+	while [ "$cg_n" -gt 0 ]; do
+		case "$1" in
+			--settings) cg_made="$cg_made --settings $(crun_quote "$2")"; shift 2; cg_n=$((cg_n - 2)); continue ;;
+			--settings=*) cg_made="$cg_made --settings $(crun_quote "${1#--settings=}")"; shift; cg_n=$((cg_n - 1)); continue ;;
+			--firmware) cg_made="$cg_made --firmware $(crun_quote "$2")"; set -- "$@" "$1" "$2"; shift 2; cg_n=$((cg_n - 2)); continue ;;
+			--firmware=*) cg_made="$cg_made --firmware $(crun_quote "${1#--firmware=}")"; set -- "$@" "$1"; shift; cg_n=$((cg_n - 1)); continue ;;
+		esac
+		set -- "$@" "$1"; shift; cg_n=$((cg_n - 1))
+	done
+	cg_dir="$(mktemp -d "$work/project.XXXXXX")"
+	eval "env -u DISPLAY \"\$engine\" --new-project \"\$cg_dir/game.chimeraProject\" \"\$cg_pkg\" \"\$cg_game\" \"\$cg_movie\" $cg_made" \
+		> "$cg_dir/make.log" 2>&1 || { echo "chimera-run: no project made: $(tail -1 "$cg_dir/make.log")" >&2; return 2; }
+	env -u DISPLAY "$engine" --project "$cg_dir/game.chimeraProject" "$cg_pkg" --files "$(dirname "$cg_game")" "$@"
+}
 trap 'rm -rf "$work"' EXIT
 ok=0; failed=0; skipped=0
 report() { # <test> <PASS|FAIL|SKIP> <what>
@@ -270,8 +292,8 @@ else
 	# a movie with keys in it, written as the engine writes one: a row a
 	# frame, sixteen columns, a key's own letter where it is held
 	python3 "$here/tests/make-movie.py" "$fe_frames" > "$work/keys.movie"
-	env -u DISPLAY "$engine" "$package" "$game" "$work/keys.movie" --record "$work/fe.movie" --screenshot "$shot=$work/fe-a.tga" > "$work/fe-record.out" 2>&1
-	env -u DISPLAY "$engine" "$package" "$game" "$work/fe.movie" --screenshot "$shot=$work/fe.tga" > "$work/fe-play.out" 2>&1
+	crun_game "$package" "$game" "$work/keys.movie" --record "$work/fe.movie" --screenshot "$shot=$work/fe-a.tga" > "$work/fe-record.out" 2>&1
+	crun_game "$package" "$game" "$work/fe.movie" --screenshot "$shot=$work/fe.tga" > "$work/fe-play.out" 2>&1
 	played=$?
 	# the engine counts frames from 0, the runner from 1; the same keys
 	box fe "$game" --frames $((shot + 1)) --ppm "$work/fe.ppm" $(python3 "$here/tests/make-movie.py" "$fe_frames" --as-presses)
@@ -281,7 +303,7 @@ else
 	else
 		report "frontend:picture" FAIL "chimera-run exit $played; pictures: $verdict; $(tail -1 "$work/fe-play.out")"
 	fi
-	env -u DISPLAY "$engine" "$package" "$game" "$work/fe.movie" --rerecord --screenshot "$shot=$work/fe-states.tga" > "$work/fe-states.out" 2>&1
+	crun_game "$package" "$game" "$work/fe.movie" --rerecord --screenshot "$shot=$work/fe-states.tga" > "$work/fe-states.out" 2>&1
 	stated=$?
 	verdict="$(python3 "$same" "$work/fe-states.tga" "$work/fe.ppm" 2>&1)"; same_rc=$?
 	if [ "$stated" = 0 ] && [ "$same_rc" = 0 ]; then
