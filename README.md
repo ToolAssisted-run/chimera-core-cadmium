@@ -5,7 +5,7 @@ frontend for tool-assisted speedruns. CHIP-8 is a small programming language
 for games from 1977, first run on the RCA COSMAC VIP computer and since then
 on calculators and on many machines that never existed. The core is built on
 [Cadmium](https://github.com/gulrak/cadmium) and produces one file,
-`cadmium.chimeraCore`, that goes in Chimera's `Cores` folder.
+`cadmium.chimeraCore`, that goes in Chimera's `cores` folder.
 
 ## Status
 

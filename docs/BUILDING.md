@@ -96,14 +96,14 @@ Cadmium carries. Nothing has to be supplied.
   with and without savestates around every frame.
 
 The window test is a script of its own, because it needs more than the rest
-(mono, Xvfb, and Chimera's window built with `dotnet build`):
+(Chimera's window built, with Chimera's `tools/ci-chimera.sh`):
 
 ```sh
 bash waterbox/tests/run-frontend.sh --chimera-root <chimera>
 ```
 
-It loads the package in Chimera's own window, on a virtual display with
-nobody at it, and asks three things: that a program's memory after 300
+It loads the package in Chimera's own window, run headless (no
+display is needed), and asks three things: that a program's memory after 300
 frames is the native build's (`window:memory`), that a setting made in
 Chimera's configuration reaches the machine (`window:setting`), and that the
 keys the package ships become Chimera's (`window:keys`).
@@ -112,9 +112,7 @@ Chimera's own checks of the package (it loads, and its keys, settings and
 file types are well formed) are run from the Chimera checkout:
 
 ```sh
-CHIMERA_CORES_DIR=<chimera>/build/Cores dotnet test \
-  source/gui/Chimera.Tests.Client.Common/Chimera.Tests.Client.Common.csproj -c Release \
-  --filter "FullyQualifiedName~InstalledCorePackagesTests|FullyQualifiedName~MnemonicUniquenessTests"
+CHIMERA_CORES_DIR=<chimera>/build/Cores <chimera>/build/meson-linux/source/ui/test-packages
 ```
 
 ## Running a program by hand

@@ -57,7 +57,7 @@ bash waterbox/tests/run-frontend.sh --chimera-root <chimera>
 The test script must end with `0 failed, 0 skipped`: every program it runs
 comes with the submodules, so nothing is missing anywhere. The last line is
 the window test: the package in Chimera's own window, with nobody at it
-(it needs mono, Xvfb and Chimera's window built). Run both before every
+(it needs Chimera's window built, and no display). Run both before every
 commit that changes the core, and say in the commit what they printed.
 
 ## Rules
