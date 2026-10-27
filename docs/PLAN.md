@@ -202,7 +202,7 @@ The test script, `waterbox/run-gate.sh`, with `CHIMERA_ROOT` set: 12 tests,
   of MegaChip's 16 MiB machine is 945,343 bytes).
 - Chimera's package checks: 17 of 17.
 - The window test (`waterbox/tests/run-frontend.sh`), 3 of 3: in Chimera's
-  own window, under Mono on a virtual display, a first-generation CHIP-8
+  own window, headless, a first-generation CHIP-8
   game's memory after 300 frames is the native build's; with Random Seed
   777 set in Chimera's configuration it is another, and the native build's
   with that seed; and the sixteen keys the package ships become Chimera's.
