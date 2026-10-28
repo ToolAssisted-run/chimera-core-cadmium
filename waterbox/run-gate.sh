@@ -249,9 +249,9 @@ cmp -s "$work/d1.out" "$work/d1n.out" && cmp -s "$work/e1.out" "$work/e1n.out" |
 grep -q "^end frame=900 " "$work/d0.out" && grep -q "^end frame=900 " "$work/d1.out" && ! cmp -s "$work/d0.out" "$work/d1.out" || why="$why seed 777 changes nothing in XO-CHIP;"
 grep -q "^end frame=900 " "$work/e0.out" && grep -q "^end frame=900 " "$work/e1.out" && ! cmp -s "$work/e0.out" "$work/e1.out" || why="$why seed 777 changes nothing in CHIP-8;"
 grep -q 'instructionsPerFrame=200$' "$work/f1.out" && ! cmp -s "$work/d0.out" "$work/f1.out" || why="$why speed 200 is not taken;"
-grep -q "does not say which kind of CHIP-8" "$work/g0.err" || why="$why a file of no known kind is not refused [$(tail -1 "$work/g0.err" | cut -c1-60)];"
+grep -q "error.which_variant" "$work/g0.err" || why="$why a file of no known kind is not refused [$(tail -1 "$work/g0.err" | cut -c1-60)];"
 head -1 "$work/g1.out" | grep -q 'variant="SUPER-CHIP 1.1"' || why="$why a file of no known kind does not run with a variant chosen;"
-grep -q "no such variant: chip-9" "$work/g2.err" || why="$why an unknown variant is not refused;"
+grep -q "error.bad_variant.chip-9" "$work/g2.err" || why="$why an unknown variant is not refused;"
 if [ -z "$why" ]; then
 	report "settings:machine" PASS "another random seed is another run (an XO-CHIP game and a CHIP-8 one), the same natively; another speed is another run; an unknown variant and a file of no known kind are refused with a reason, and that file runs once a variant is chosen"
 else
@@ -262,7 +262,7 @@ fi
 # compile is refused with a reason (it used to be "loaded" as nothing).
 box c0 "$gif/test_badcode.8o" --frames 10
 box c1 "$gif/test_tiny.8o" --frames 10
-if grep -q "is a source that does not compile" "$work/c0.err" && grep -q "^end frame=10 " "$work/c1.out"; then
+if grep -q "error.not_compiled" "$work/c0.err" && grep -q "^end frame=10 " "$work/c1.out"; then
 	report "program:source" PASS "an Octo source file is compiled and run in the sandbox, and one with an error in it is refused with a reason"
 else
 	report "program:source" FAIL "bad source [$(tail -1 "$work/c0.err" | cut -c1-80)] good source [$(last "$work/c1.out" | cut -c1-80)]"

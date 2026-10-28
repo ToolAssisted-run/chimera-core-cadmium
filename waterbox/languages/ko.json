@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1은(는) 이 코어가 받는 난수 시드가 아닙니다.",
+		"error.bad_speed": "%1은(는) 이 코어가 받는 프레임당 명령 수가 아닙니다.",
+		"error.bad_variant": "'%1'은(는) 이 코어에 있는 변형이 아닙니다.",
+		"error.no_file": "프로젝트에 프로그램이 없습니다.",
+		"error.not_compiled": "'%1'은(는) 컴파일되지 않는 소스입니다.",
+		"error.not_loaded": "'%1'을(를) %2 프로그램으로 불러올 수 없습니다. 프로그램이 그 머신의 메모리에 비해 너무 크거나, 파일이 확장자가 말하는 것이 아닙니다.",
+		"error.not_program": "'%1'은(는) %2바이트인데, CHIP-8 프로그램이 아닙니다.",
+		"error.second_load": "'%1'을(를) 두 번째로 불러올 수 없습니다.",
+		"error.which_variant": "'%1'은(는) 어떤 종류의 CHIP-8용인지 알려 주지 않습니다. 확장자가 .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip 중 하나가 아닙니다. 설정에서 변형을 고르십시오.",
+		"setting.instructions_per_frame": "프레임당 명령 수",
+		"setting.instructions_per_frame.about": "머신이 한 프레임에 실행하는 CHIP-8 명령 수, 즉 속도입니다. 0이면 변형 자체의 속도를 쓰거나, Cadmium이 그 프로그램에 대해 아는 속도를 씁니다(첫 CHIP-8은 15, SUPER-CHIP은 30, XO-CHIP은 1000). 너무 느리거나 빠른 프로그램에는 다른 숫자를 줄 수 있습니다. \"vip\", \"cosmac-vip\", \"dream-6800\", \"chip-8-strict\" 변형은 자체 시간을 쓰며 이 값을 무시합니다. 이것은 머신의 일부이므로 무비에는 같은 값이 필요합니다.",
+		"setting.random_seed": "난수 시드",
+		"setting.random_seed.about": "머신의 난수가 시작되는 숫자입니다. 실제 머신은 그 자리에 있던 값에서 시작하지만, 이 숫자를 고정하면 같은 프로젝트는 항상 같게 진행되고, 다른 숫자는 프로그램에 다른 운을 줍니다. \"vip\", \"cosmac-vip\", \"dream-6800\", \"chip-8-strict\" 변형은 난수를 스스로 만들며 이 값을 무시합니다. 이것은 머신의 일부이므로 무비에는 같은 값이 필요합니다.",
+		"setting.variant": "변형",
+		"setting.variant.about": "어떤 CHIP-8 머신이 프로그램을 실행할지 정합니다. CHIP-8에는 많은 종류가 있고, 한 종류를 위해 만든 프로그램은 다른 종류에서 자주 잘못 돌아갑니다. \"auto\"이면 Cadmium이 정합니다. Cadmium은 내용으로 많은 프로그램을 알아보며, 그렇지 않으면 파일 확장자(.ch8, SUPER-CHIP용 .sc8, XO-CHIP용 .xo8, MegaChip용 .mc8 등)를 따릅니다. 프로그램이 잘못 돌아가거나, 파일에 Cadmium이 아는 확장자가 없으면 직접 고르십시오. \"vip\" 변형들, \"cosmac-vip\"과 \"dream-6800\" 계열은 원래 컴퓨터 전체를 자체 CHIP-8 해석기와 함께 에뮬레이션합니다. 느리지만 가장 충실하며, 기계어가 들어 있는 프로그램도 실행할 수 있습니다. \"chip-8-strict\"는 컴퓨터를 에뮬레이션하지 않고, 원래 COSMAC VIP의 정확한 타이밍을 갖습니다. 이것은 머신의 일부이므로 무비에는 같은 값이 필요합니다.",
+		"slot.program": "프로그램",
+		"slot.program.help": "CHIP-8 프로그램입니다. 확장자가 어떤 종류의 CHIP-8용인지 말해 줍니다. .ch8은 종류를 프로그램에서 알아냅니다. .sc8은 SUPER-CHIP, .xo8은 XO-CHIP, .mc8은 MegaChip, .ch10은 CHIP-10, .c8x는 CHIP-8X, .c8e는 CHIP-8E, .hc8은 COSMAC VIP 기계어가 들어 있는 프로그램, .c8tp는 VIP의 64x64 모드, .c8b는 여러 종류의 버전을 담은 파일입니다. Octo 카트리지(.gif)와 Octo 소스 파일(.8o)은 프로젝트가 시작될 때 컴파일됩니다. 다른 파일을 포함하는 소스 파일은 지원되지 않습니다. .bin, .ram, .vip 파일은 CHIP-8 없이 순수한 COSMAC VIP에 불러옵니다. 그 밖에는 아무것도 필요하지 않습니다. 머신들의 프로그램은 Cadmium의 일부입니다."
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 不是本核心接受的亂數種子。",
+		"error.bad_speed": "%1 不是本核心接受的每影格指令數。",
+		"error.bad_variant": "「%1」不是本核心有的變體。",
+		"error.no_file": "專案中沒有程式。",
+		"error.not_compiled": "「%1」是無法編譯的原始碼。",
+		"error.not_loaded": "「%1」無法以 %2 程式載入。程式對該機器的記憶體來說太大,或檔案內容與其副檔名不符。",
+		"error.not_program": "「%1」有 %2 位元組,不是 CHIP-8 程式。",
+		"error.second_load": "「%1」無法再次載入。",
+		"error.which_variant": "「%1」沒有說明它是哪一種 CHIP-8:它的副檔名不在 .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip 之中。請在設定中選擇「變體」。",
+		"setting.instructions_per_frame": "每影格指令數",
+		"setting.instructions_per_frame.about": "機器每一個影格執行多少條 CHIP-8 指令:也就是它的速度。0 表示使用變體自己的速度,或 Cadmium 為該程式所知的速度(第一代 CHIP-8 為 15,SUPER-CHIP 為 30,XO-CHIP 為 1000)。若程式對你來說太慢或太快,可以改為其他數字。「vip」、「cosmac-vip」、「dream-6800」和「chip-8-strict」變體會保留它們自己的時間,忽略此設定。它屬於機器的一部分,因此錄影需要相同的值。",
+		"setting.random_seed": "亂數種子",
+		"setting.random_seed.about": "機器亂數的起始數字。真實的機器從當時剛好存在的任何狀態開始;固定此數字後,同一個專案每次都以相同方式進行,換另一個數字則給程式另一組運氣。「vip」、「cosmac-vip」、「dream-6800」和「chip-8-strict」變體自行產生亂數,忽略此設定。它屬於機器的一部分,因此錄影需要相同的值。",
+		"setting.variant": "變體",
+		"setting.variant.about": "由哪一種 CHIP-8 機器執行程式。CHIP-8 有許多種,為某一種寫的程式在另一種上常會出錯。「auto」由 Cadmium 決定:它能依內容辨認許多程式,否則依檔案的副檔名判斷(.ch8,SUPER-CHIP 用 .sc8,XO-CHIP 用 .xo8,MegaChip 用 .mc8,等等)。當程式運行錯誤,或其檔案沒有 Cadmium 認得的副檔名時,請自行選擇。「vip」變體、「cosmac-vip」和「dream-6800」系列會模擬整台原始電腦,執行它自己的 CHIP-8 直譯器,較慢但最忠實,並且能執行含有機器碼的程式。「chip-8-strict」具有原始 COSMAC VIP 的精確時序,但不模擬電腦。它屬於機器的一部分,因此錄影需要相同的值。",
+		"slot.program": "程式",
+		"slot.program.help": "CHIP-8 程式。副檔名說明它是哪一種 CHIP-8:.ch8(種類由程式推算)、.sc8 SUPER-CHIP、.xo8 XO-CHIP、.mc8 MegaChip、.ch10 CHIP-10、.c8x CHIP-8X、.c8e CHIP-8E、.hc8 含有 COSMAC VIP 機器碼的程式、.c8tp VIP 的 64x64 模式、.c8b 內含多種種類版本的檔案。Octo 卡匣(.gif)與 Octo 原始碼(.8o)會在專案開始時編譯;包含其他檔案的原始碼不支援。.bin、.ram 或 .vip 檔會載入到沒有 CHIP-8 的 COSMAC VIP 裸機中。不需要其他東西:機器自己的程式已是 Cadmium 的一部分。"
+	}
+}

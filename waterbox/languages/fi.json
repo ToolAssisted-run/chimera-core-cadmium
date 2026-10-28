@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 ei ole satunnaislukujen siemen, jonka tämä ydin hyväksyy.",
+		"error.bad_speed": "%1 ei ole käskymäärä kehystä kohti, jonka tämä ydin hyväksyy.",
+		"error.bad_variant": "'%1' ei ole tämän ytimen versio.",
+		"error.no_file": "Projektissa ei ole ohjelmaa.",
+		"error.not_compiled": "'%1' on lähdekoodi, joka ei käänny.",
+		"error.not_loaded": "'%1' ei voitu ladata %2-ohjelmana. Ohjelma on liian suuri kyseisen koneen muistille, tai tiedosto ei ole sitä, mitä sen pääte sanoo.",
+		"error.not_program": "'%1' on %2 tavua, eikä se ole CHIP-8-ohjelma.",
+		"error.second_load": "'%1' ei voitu ladata toistamiseen.",
+		"error.which_variant": "'%1' ei kerro, minkä tyyppinen CHIP-8 se on: sen pääte ei ole mikään näistä: .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip. Valitse Versio asetuksissa.",
+		"setting.instructions_per_frame": "Käskyjä kehystä kohti",
+		"setting.instructions_per_frame.about": "Kuinka monta CHIP-8-käskyä kone suorittaa yhdessä kehyksessä: sen nopeus. 0 käyttää version omaa nopeutta tai nopeutta, jonka Cadmium tuntee ohjelmalle (15 ensimmäiselle CHIP-8:lle, 30 SUPER-CHIP:lle, 1000 XO-CHIP:lle). Ohjelmalle, joka käy liian hitaasti tai liian nopeasti, voi antaa toisen luvun. Versiot \"vip\", \"cosmac-vip\", \"dream-6800\" ja \"chip-8-strict\" säilyttävät oman aikansa eivätkä huomioi tätä. Tämä kuuluu koneeseen, joten tallenne tarvitsee saman arvon.",
+		"setting.random_seed": "Satunnaislukujen siemen",
+		"setting.random_seed.about": "Luku, josta koneen satunnaisluvut alkavat. Oikea kone alkaa siitä, mitä sattuu olemaan. Kun tämä luku on kiinteä, sama projekti toistuu aina samalla tavalla, ja toinen luku antaa ohjelmalle toisenlaisen onnen. Versiot \"vip\", \"cosmac-vip\", \"dream-6800\" ja \"chip-8-strict\" tekevät satunnaislukunsa itse eivätkä huomioi tätä. Tämä kuuluu koneeseen, joten tallenne tarvitsee saman arvon.",
+		"setting.variant": "Versio",
+		"setting.variant.about": "Mikä CHIP-8-kone ajaa ohjelmaa. CHIP-8:aa on monia tyyppejä, ja toiselle kirjoitettu ohjelma toimii usein väärin toisella. \"auto\" antaa Cadmiumin päättää: se tuntee monet ohjelmat sisällön perusteella, ja muuten se noudattaa tiedoston päätettä (.ch8, .sc8 SUPER-CHIP:lle, .xo8 XO-CHIP:lle, .mc8 MegaChipille ja niin edelleen). Valitse itse, kun ohjelma toimii väärin, tai kun sen tiedostolla ei ole päätettä, jonka Cadmium tuntee. Versiot \"vip\", \"cosmac-vip\" ja \"dream-6800\" jäljittelevät koko alkuperäistä tietokonetta, joka ajaa omaa CHIP-8-tulkkiaan. Ne ovat hitaampia ja uskollisimpia, ja ne voivat ajaa ohjelmia, jotka sisältävät konekieltä. \"chip-8-strict\" noudattaa alkuperäisen COSMAC VIP:n tarkkaa ajoitusta jäljittelemättä tietokonetta. Tämä kuuluu koneeseen, joten tallenne tarvitsee saman arvon.",
+		"slot.program": "Ohjelma",
+		"slot.program.help": "CHIP-8-ohjelma. Sen pääte kertoo, minkä tyyppiselle CHIP-8:lle se on tehty: .ch8 (tyyppi selvitetään ohjelmasta), .sc8 SUPER-CHIP, .xo8 XO-CHIP, .mc8 MegaChip, .ch10 CHIP-10, .c8x CHIP-8X, .c8e CHIP-8E, .hc8 ohjelma, jossa on COSMAC VIP:n konekieltä, .c8tp VIP:n 64x64-tila, .c8b tiedosto, joka sisältää versioita useille tyypeille. Octo-kasetti (.gif) ja Octo-lähdetiedosto (.8o) käännetään projektin alkaessa; lähdetiedostoa, joka liittää muita tiedostoja, ei tueta. .bin-, .ram- tai .vip-tiedosto ladataan paljaaseen COSMAC VIP:iin ilman CHIP-8:aa. Muuta ei tarvita: koneiden omat ohjelmat kuuluvat Cadmiumiin."
+	}
+}

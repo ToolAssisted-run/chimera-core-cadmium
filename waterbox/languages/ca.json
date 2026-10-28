@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 no és una llavor aleatòria que aquest nucli accepti.",
+		"error.bad_speed": "%1 no és un nombre d'instruccions per fotograma que aquest nucli accepti.",
+		"error.bad_variant": "'%1' no és una variant que tingui aquest nucli.",
+		"error.no_file": "No hi ha cap programa al projecte.",
+		"error.not_compiled": "'%1' és un codi font que no compila.",
+		"error.not_loaded": "No s'ha pogut carregar '%1' com a programa de %2. El programa és massa gran per a la memòria d'aquella màquina, o el fitxer no és el que diu la seua extensió.",
+		"error.not_program": "'%1' fa %2 bytes, que no és un programa CHIP-8.",
+		"error.second_load": "No s'ha pogut carregar '%1' una segona vegada.",
+		"error.which_variant": "'%1' no diu de quin tipus de CHIP-8 és: la seua extensió no és cap de .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip. Trieu la Variant a la configuració.",
+		"setting.instructions_per_frame": "Instruccions per fotograma",
+		"setting.instructions_per_frame.about": "Quantes instruccions CHIP-8 executa la màquina en un fotograma: la seua velocitat. 0 usa la velocitat pròpia de la variant, o la velocitat que Cadmium coneix per al programa (15 per al primer CHIP-8, 30 per a SUPER-CHIP, 1000 per a XO-CHIP). Un programa que va massa lent o massa ràpid per a vosaltres pot tenir un altre número. Les variants \"vip\", \"cosmac-vip\", \"dream-6800\" i \"chip-8-strict\" mantenen el seu propi temps i ignoren això. Forma part de la màquina, així que una pel·lícula necessita el mateix valor.",
+		"setting.random_seed": "Llavor aleatòria",
+		"setting.random_seed.about": "El número del qual comencen els nombres aleatoris de la màquina. Una màquina real comença des del que hi hagi per casualitat; amb aquest número fix, el mateix projecte sempre es comporta igual, i un altre número dona a un programa una altra sort. Les variants \"vip\", \"cosmac-vip\", \"dream-6800\" i \"chip-8-strict\" fan els seus propis nombres aleatoris i ignoren això. Forma part de la màquina, així que una pel·lícula necessita el mateix valor.",
+		"setting.variant": "Variant",
+		"setting.variant.about": "Quina màquina CHIP-8 executa el programa. Hi ha molts tipus de CHIP-8, i un programa escrit per a un sovint falla en un altre. \"auto\" deixa que Cadmium decideixi: en coneix molts programes pel seu contingut, i si no, es guia per l'extensió del fitxer (.ch8, .sc8 per a SUPER-CHIP, .xo8 per a XO-CHIP, .mc8 per a MegaChip, i així successivament). Trieu-ne una vosaltres quan un programa va malament, o quan el seu fitxer no té cap extensió que Cadmium conegui. Les variants \"vip\", \"cosmac-vip\" i les \"dream-6800\" emulen tot l'ordinador original executant el seu propi intèrpret de CHIP-8, cosa més lenta i la més fidel, i poden executar programes que contenen codi màquina. \"chip-8-strict\" té la temporització exacta del COSMAC VIP original sense emular l'ordinador. Forma part de la màquina, així que una pel·lícula necessita el mateix valor.",
+		"slot.program": "Programa",
+		"slot.program.help": "El programa CHIP-8. La seua extensió diu de quin tipus de CHIP-8 és: .ch8 (el tipus es calcula a partir del programa), .sc8 SUPER-CHIP, .xo8 XO-CHIP, .mc8 MegaChip, .ch10 CHIP-10, .c8x CHIP-8X, .c8e CHIP-8E, .hc8 un programa amb codi màquina del COSMAC VIP, .c8tp el mode de 64x64 del VIP, .c8b un fitxer que guarda versions per a diversos tipus. Un cartutx d'Octo (.gif) i un fitxer font d'Octo (.8o) es compilen quan comença el projecte; un fitxer font que inclou altres fitxers no és compatible. Un fitxer .bin, .ram o .vip es carrega en un COSMAC VIP pelat, sense CHIP-8. No cal res més: els programes propis de les màquines formen part de Cadmium."
+	}
+}

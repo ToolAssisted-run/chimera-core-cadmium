@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 bukan angka awal acak yang diterima core ini.",
+		"error.bad_speed": "%1 bukan jumlah instruksi per bingkai yang diterima core ini.",
+		"error.bad_variant": "'%1' bukan varian yang dimiliki core ini.",
+		"error.no_file": "Tidak ada program dalam proyek.",
+		"error.not_compiled": "'%1' adalah sumber yang tidak dapat dikompilasi.",
+		"error.not_loaded": "'%1' tidak dapat dimuat sebagai program %2. Program terlalu besar untuk memori mesin itu, atau file-nya bukan seperti yang ditunjukkan ekstensinya.",
+		"error.not_program": "'%1' berukuran %2 byte, yang bukan program CHIP-8.",
+		"error.second_load": "'%1' tidak dapat dimuat untuk kedua kalinya.",
+		"error.which_variant": "'%1' tidak menyebutkan jenis CHIP-8 mana yang dimaksud: ekstensinya bukan salah satu dari .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip. Pilih Varian di pengaturan.",
+		"setting.instructions_per_frame": "Instruksi per Bingkai",
+		"setting.instructions_per_frame.about": "Berapa banyak instruksi CHIP-8 yang dijalankan mesin dalam satu bingkai: kecepatannya. 0 memakai kecepatan varian itu sendiri, atau kecepatan yang diketahui Cadmium untuk program tersebut (15 untuk CHIP-8 pertama, 30 untuk SUPER-CHIP, 1000 untuk XO-CHIP). Program yang berjalan terlalu lambat atau terlalu cepat bagi Anda dapat diberi angka lain. Varian \"vip\", \"cosmac-vip\", \"dream-6800\", dan \"chip-8-strict\" mempertahankan waktunya sendiri dan mengabaikan ini. Ini bagian dari mesin, sehingga rekaman membutuhkan nilai yang sama.",
+		"setting.random_seed": "Angka Awal Acak",
+		"setting.random_seed.about": "Angka tempat bilangan acak mesin dimulai. Mesin sungguhan dimulai dari apa pun yang kebetulan ada di sana; dengan angka ini ditetapkan, proyek yang sama selalu berjalan dengan cara yang sama, dan angka lain memberi program proses keberuntungan yang berbeda. Varian \"vip\", \"cosmac-vip\", \"dream-6800\", dan \"chip-8-strict\" membuat bilangan acaknya sendiri dan mengabaikan ini. Ini bagian dari mesin, sehingga rekaman membutuhkan nilai yang sama.",
+		"setting.variant": "Varian",
+		"setting.variant.about": "Mesin CHIP-8 mana yang menjalankan program. Ada banyak jenis CHIP-8, dan program yang ditulis untuk satu jenis sering berperilaku salah pada jenis lain. \"auto\" membiarkan Cadmium memutuskan: ia mengenali banyak program dari isinya, dan selain itu mengikuti ekstensi file (.ch8, .sc8 untuk SUPER-CHIP, .xo8 untuk XO-CHIP, .mc8 untuk MegaChip, dan seterusnya). Pilih sendiri ketika sebuah program berjalan salah, atau ketika file-nya tidak memiliki ekstensi yang dikenal Cadmium. Varian \"vip\", \"cosmac-vip\", dan yang \"dream-6800\" meniru seluruh komputer asli yang menjalankan interpreter CHIP-8 miliknya sendiri; ini lebih lambat dan paling setia, dan dapat menjalankan program yang berisi kode mesin. \"chip-8-strict\" memiliki waktu COSMAC VIP asli yang persis tanpa meniru komputernya. Ini bagian dari mesin, sehingga rekaman membutuhkan nilai yang sama.",
+		"slot.program": "Program",
+		"slot.program.help": "Program CHIP-8. Ekstensinya menunjukkan jenis CHIP-8 mana yang dimaksud: .ch8 (jenisnya dicari dari program), .sc8 SUPER-CHIP, .xo8 XO-CHIP, .mc8 MegaChip, .ch10 CHIP-10, .c8x CHIP-8X, .c8e CHIP-8E, .hc8 program dengan kode mesin COSMAC VIP di dalamnya, .c8tp mode 64x64 VIP, .c8b file yang berisi versi untuk beberapa jenis. Kartrid Octo (.gif) dan file sumber Octo (.8o) dikompilasi ketika proyek dimulai; file sumber yang menyertakan file lain tidak didukung. File .bin, .ram, atau .vip dimuat ke COSMAC VIP polos tanpa CHIP-8. Tidak ada yang lain yang diperlukan: program bawaan mesin-mesin itu adalah bagian dari Cadmium."
+	}
+}

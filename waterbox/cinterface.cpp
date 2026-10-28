@@ -48,6 +48,11 @@ constexpr int MAX_W = 384, MAX_H = 192;
 constexpr int OUT_RATE = 48000;
 constexpr int MAX_SAMPLES = 2048;
 
+/* A text a person reads is a key of languages/en.json, each of its
+ * arguments after a TEXT_ARG (chimera docs/translations.md). TEXT_ARG is a
+ * string of its own so the byte after it is never read as more of its hex. */
+#define TEXT_ARG "\x1f"
+
 char g_loadError[512];
 uint32_t g_videoOut[MAX_W * MAX_H];
 int g_vwidth = 64, g_vheight = 32;
@@ -312,12 +317,12 @@ ECL_EXPORT int Init(void)
 	if (!opened) opened = readWhole("rom", program, 16u << 20);
 	if (!opened)
 	{
-		snprintf(g_loadError, sizeof(g_loadError), "no program is mounted");
+		snprintf(g_loadError, sizeof(g_loadError), "error.no_file");
 		return 0;
 	}
 	if (program.empty() || program.size() > (16u << 20))
 	{
-		snprintf(g_loadError, sizeof(g_loadError), "'%s' is %zu bytes, which is not a CHIP-8 program", file.c_str(), program.size());
+		snprintf(g_loadError, sizeof(g_loadError), "error.not_program" TEXT_ARG "%s" TEXT_ARG "%zu", file.c_str(), program.size());
 		return 0;
 	}
 
@@ -327,12 +332,12 @@ ECL_EXPORT int Init(void)
 	const long seed = wbx_setting_long("random_seed", 0);
 	if (speed < 0 || speed > 500000)
 	{
-		snprintf(g_loadError, sizeof(g_loadError), "no such number of instructions a frame: %ld", speed);
+		snprintf(g_loadError, sizeof(g_loadError), "error.bad_speed" TEXT_ARG "%ld", speed);
 		return 0;
 	}
 	if (seed < 0 || seed > 65535)
 	{
-		snprintf(g_loadError, sizeof(g_loadError), "no such random seed: %ld", seed);
+		snprintf(g_loadError, sizeof(g_loadError), "error.bad_seed" TEXT_ARG "%ld", seed);
 		return 0;
 	}
 	const bool decide = !strcmp(variant, "auto");
@@ -346,7 +351,7 @@ ECL_EXPORT int Init(void)
 		}
 		if (!found)
 		{
-			snprintf(g_loadError, sizeof(g_loadError), "no such variant: %s", variant);
+			snprintf(g_loadError, sizeof(g_loadError), "error.bad_variant" TEXT_ARG "%s", variant);
 			return 0;
 		}
 	}
@@ -363,8 +368,7 @@ ECL_EXPORT int Init(void)
 		if (decide)
 		{
 			snprintf(g_loadError, sizeof(g_loadError),
-				"'%s' does not say which kind of CHIP-8 it is for (its extension is not one of .ch8 .sc8 .xo8 .mc8 "
-				".ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip): choose the Variant in the settings",
+				"error.which_variant" TEXT_ARG "%s",
 				shown.c_str());
 			return 0;
 		}
@@ -378,14 +382,13 @@ ECL_EXPORT int Init(void)
 	if (!m.loadBinary(shown, program.data(), program.size(), asAsked))
 	{
 		snprintf(g_loadError, sizeof(g_loadError),
-			"'%s' could not be loaded as a %s program: the program is too big for that machine's memory, or the "
-			"file is not what its extension says", shown.c_str(), Options::nameOfPreset(m.options().behaviorBase).c_str());
+			"error.not_loaded" TEXT_ARG "%s" TEXT_ARG "%s", shown.c_str(), Options::nameOfPreset(m.options().behaviorBase).c_str());
 		return 0;
 	}
 
 	if (m.programBytes() == 0)
 	{
-		snprintf(g_loadError, sizeof(g_loadError), "'%s' is a source that does not compile", shown.c_str());
+		snprintf(g_loadError, sizeof(g_loadError), "error.not_compiled" TEXT_ARG "%s", shown.c_str());
 		return 0;
 	}
 
@@ -412,7 +415,7 @@ ECL_EXPORT int Init(void)
 	m.updateEmulatorOptions(final);
 	if (!m.loadBinary(shown, program.data(), program.size(), Machine::LoadOptions::DontChangeOptions))
 	{
-		snprintf(g_loadError, sizeof(g_loadError), "'%s' could not be loaded a second time", shown.c_str());
+		snprintf(g_loadError, sizeof(g_loadError), "error.second_load" TEXT_ARG "%s", shown.c_str());
 		return 0;
 	}
 

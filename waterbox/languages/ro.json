@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 nu este un număr de pornire pentru numerele aleatoare pe care le acceptă acest nucleu.",
+		"error.bad_speed": "%1 nu este un număr de instrucțiuni pe cadru pe care îl acceptă acest nucleu.",
+		"error.bad_variant": "„%1” nu este o variantă pe care o are acest nucleu.",
+		"error.no_file": "Niciun program nu este în proiect.",
+		"error.not_compiled": "„%1” este o sursă care nu se compilează.",
+		"error.not_loaded": "„%1” nu a putut fi încărcat ca program %2. Programul este prea mare pentru memoria acelei mașini, sau fișierul nu este ceea ce spune extensia lui.",
+		"error.not_program": "„%1” are %2 octeți, ceea ce nu este un program CHIP-8.",
+		"error.second_load": "„%1” nu a putut fi încărcat a doua oară.",
+		"error.which_variant": "„%1” nu spune ce fel de CHIP-8 este: extensia lui nu este una dintre .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip. Alege Varianta în setări.",
+		"setting.instructions_per_frame": "Instrucțiuni pe cadru",
+		"setting.instructions_per_frame.about": "Câte instrucțiuni CHIP-8 execută mașina într-un cadru: viteza ei. 0 folosește viteza variantei, sau viteza pe care o cunoaște Cadmium pentru program (15 pentru primul CHIP-8, 30 pentru SUPER-CHIP, 1000 pentru XO-CHIP). Un program care merge prea încet sau prea repede pentru tine poate primi alt număr. Variantele „vip”, „cosmac-vip”, „dream-6800” și „chip-8-strict” își păstrează propriul timp și ignoră această setare. Face parte din mașină, deci o înregistrare are nevoie de aceeași valoare.",
+		"setting.random_seed": "Sămânța numerelor aleatoare",
+		"setting.random_seed.about": "Numărul de la care pornesc numerele aleatoare ale mașinii. O mașină reală pornește de la ce se află întâmplător acolo; cu acest număr fixat, același proiect se joacă mereu la fel, iar alt număr îi dă programului o altă rulare norocoasă. Variantele „vip”, „cosmac-vip”, „dream-6800” și „chip-8-strict” își fac singure numerele aleatoare și ignoră asta. Face parte din mașină, deci o înregistrare are nevoie de aceeași valoare.",
+		"setting.variant": "Varianta",
+		"setting.variant.about": "Ce mașină CHIP-8 rulează programul. Există multe feluri de CHIP-8, iar un program scris pentru unul se comportă adesea greșit pe altul. „auto” lasă Cadmium să decidă: cunoaște multe programe după conținutul lor și, în rest, se ghidează după extensia fișierului (.ch8, .sc8 pentru SUPER-CHIP, .xo8 pentru XO-CHIP, .mc8 pentru MegaChip și așa mai departe). Alege una singur când un program merge greșit, sau când fișierul lui nu are o extensie pe care o cunoaște Cadmium. Variantele „vip”, „cosmac-vip” și cele „dream-6800” emulează întregul calculator original care rulează propriul interpretor CHIP-8, este mai lent și cel mai fidel și poate rula programe care conțin cod mașină. „chip-8-strict” are timpul exact al COSMAC VIP original, fără să emuleze calculatorul. Face parte din mașină, deci o înregistrare are nevoie de aceeași valoare.",
+		"slot.program": "Program",
+		"slot.program.help": "Programul CHIP-8. Extensia lui spune ce fel de CHIP-8 este: .ch8 (felul se află din program), .sc8 SUPER-CHIP, .xo8 XO-CHIP, .mc8 MegaChip, .ch10 CHIP-10, .c8x CHIP-8X, .c8e CHIP-8E, .hc8 un program cu cod mașină COSMAC VIP în el, .c8tp modul 64x64 al VIP-ului, .c8b un fișier care ține versiuni pentru mai multe feluri. O cartușă Octo (.gif) și un fișier sursă Octo (.8o) sunt compilate când pornește proiectul; un fișier sursă care include alte fișiere nu este acceptat. Un fișier .bin, .ram sau .vip este încărcat într-un COSMAC VIP gol, fără CHIP-8. Nimic altceva nu este necesar: programele mașinilor fac parte din Cadmium."
+	}
+}

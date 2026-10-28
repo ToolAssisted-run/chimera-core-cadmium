@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 non è un seme casuale che questo core accetta.",
+		"error.bad_speed": "%1 non è un numero di istruzioni per fotogramma che questo core accetta.",
+		"error.bad_variant": "'%1' non è una variante che questo core ha.",
+		"error.no_file": "Nel progetto non c'è nessun programma.",
+		"error.not_compiled": "'%1' è un sorgente che non compila.",
+		"error.not_loaded": "'%1' non è stato possibile caricarlo come programma %2. Il programma è troppo grande per la memoria di quella macchina, oppure il file non è quello che dice la sua estensione.",
+		"error.not_program": "'%1' è di %2 byte, che non è un programma CHIP-8.",
+		"error.second_load": "'%1' non è stato possibile caricarlo una seconda volta.",
+		"error.which_variant": "'%1' non dice di quale tipo di CHIP-8 sia: la sua estensione non è una di .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip. Scegli la Variante nelle impostazioni.",
+		"setting.instructions_per_frame": "Istruzioni per fotogramma",
+		"setting.instructions_per_frame.about": "Quante istruzioni CHIP-8 esegue la macchina in un fotogramma: la sua velocità. 0 usa la velocità della variante, oppure quella che Cadmium conosce per il programma (15 per il primo CHIP-8, 30 per SUPER-CHIP, 1000 per XO-CHIP). Un programma che va troppo piano o troppo veloce per te può avere un altro numero. Le varianti \"vip\", \"cosmac-vip\", \"dream-6800\" e \"chip-8-strict\" mantengono il proprio tempo e ignorano questo. Fa parte della macchina, quindi un filmato richiede lo stesso valore.",
+		"setting.random_seed": "Seme casuale",
+		"setting.random_seed.about": "Il numero da cui partono i numeri casuali della macchina. Una macchina vera parte da ciò che vi capita di trovare; con questo numero fisso, lo stesso progetto gioca sempre allo stesso modo, e un altro numero dà al programma un'altra sorte. Le varianti \"vip\", \"cosmac-vip\", \"dream-6800\" e \"chip-8-strict\" fanno i propri numeri casuali e ignorano questo. Fa parte della macchina, quindi un filmato richiede lo stesso valore.",
+		"setting.variant": "Variante",
+		"setting.variant.about": "Quale macchina CHIP-8 esegue il programma. Ci sono molti tipi di CHIP-8, e un programma scritto per uno spesso si comporta male su un altro. \"auto\" lascia decidere a Cadmium: ne riconosce molti dal contenuto, e per il resto si basa sull'estensione del file (.ch8, .sc8 per SUPER-CHIP, .xo8 per XO-CHIP, .mc8 per MegaChip, e così via). Scegline una tu quando un programma gira male, oppure quando il suo file non ha un'estensione che Cadmium conosce. Le varianti \"vip\", \"cosmac-vip\" e quelle \"dream-6800\" emulano l'intero computer originale mentre esegue il proprio interprete CHIP-8, il che è più lento e più fedele, e può far girare programmi che contengono codice macchina. \"chip-8-strict\" ha il tempo esatto del COSMAC VIP originale senza emulare il computer. Fa parte della macchina, quindi un filmato richiede lo stesso valore.",
+		"slot.program": "Programma",
+		"slot.program.help": "Il programma CHIP-8. La sua estensione dice di quale tipo di CHIP-8 è: .ch8 (il tipo si ricava dal programma), .sc8 SUPER-CHIP, .xo8 XO-CHIP, .mc8 MegaChip, .ch10 CHIP-10, .c8x CHIP-8X, .c8e CHIP-8E, .hc8 un programma con codice macchina del COSMAC VIP dentro, .c8tp la modalità 64x64 del VIP, .c8b un file che contiene versioni per più tipi. Una cartuccia Octo (.gif) e un file sorgente Octo (.8o) vengono compilati all'avvio del progetto; un file sorgente che include altri file non è supportato. Un file .bin, .ram o .vip viene caricato in un COSMAC VIP nudo senza CHIP-8. Non serve altro: i programmi propri delle macchine fanno parte di Cadmium."
+	}
+}

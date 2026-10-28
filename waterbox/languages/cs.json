@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 není náhodné semínko, které toto jádro přijímá.",
+		"error.bad_speed": "%1 není počet instrukcí na snímek, který toto jádro přijímá.",
+		"error.bad_variant": "„%1“ není varianta, kterou toto jádro má.",
+		"error.no_file": "V projektu není žádný program.",
+		"error.not_compiled": "„%1“ je zdroj, který se nepřeloží.",
+		"error.not_loaded": "„%1“ se nepodařilo načíst jako program %2. Program je na paměť toho stroje příliš velký, nebo soubor neodpovídá své příponě.",
+		"error.not_program": "„%1“ má %2 bajtů, což není program CHIP-8.",
+		"error.second_load": "„%1“ se nepodařilo načíst podruhé.",
+		"error.which_variant": "„%1“ neříká, pro který CHIP-8 je: jeho přípona není žádná z .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip. Vyber Variantu v nastavení.",
+		"setting.instructions_per_frame": "Instrukce na snímek",
+		"setting.instructions_per_frame.about": "Kolik instrukcí CHIP-8 stroj vykoná v jednom snímku: jeho rychlost. 0 použije vlastní rychlost varianty, nebo rychlost, kterou Cadmium zná pro program (15 pro první CHIP-8, 30 pro SUPER-CHIP, 1000 pro XO-CHIP). Program, který běží pro tebe příliš pomalu nebo příliš rychle, lze dát jiným číslem. Varianty „vip“, „cosmac-vip“, „dream-6800“ a „chip-8-strict“ si drží svůj vlastní čas a toto nastavení ignorují. Je součástí stroje, takže film potřebuje stejnou hodnotu.",
+		"setting.random_seed": "Náhodné semínko",
+		"setting.random_seed.about": "Číslo, od kterého začínají náhodná čísla stroje. Skutečný stroj začíná od toho, co tam zrovna je; když je toto číslo pevné, stejný projekt se vždy hraje stejně a jiné číslo dá programu jiný průběh štěstí. Varianty „vip“, „cosmac-vip“, „dream-6800“ a „chip-8-strict“ si náhodná čísla dělají samy a toto nastavení ignorují. Je součástí stroje, takže film potřebuje stejnou hodnotu.",
+		"setting.variant": "Varianta",
+		"setting.variant.about": "Který stroj CHIP-8 program spouští. Existuje mnoho druhů CHIP-8 a program napsaný pro jeden se na jiném často chová špatně. „auto“ nechá rozhodnout Cadmium: zná mnoho programů podle jejich obsahu a jinak se řídí příponou souboru (.ch8, .sc8 pro SUPER-CHIP, .xo8 pro XO-CHIP, .mc8 pro MegaChip a tak dál). Vyber si sám, když program běží špatně, nebo když jeho soubor nemá příponu, kterou Cadmium zná. Varianty „vip“, „cosmac-vip“ a „dream-6800“ emulují celý původní počítač, který běží vlastní interpret CHIP-8; jsou pomalejší a nejvěrnější a umějí spustit programy, které obsahují strojový kód. „chip-8-strict“ má přesné časování původního COSMAC VIP bez emulace počítače. Je součástí stroje, takže film potřebuje stejnou hodnotu.",
+		"slot.program": "Program",
+		"slot.program.help": "Program CHIP-8. Jeho přípona říká, pro jaký druh CHIP-8 je: .ch8 (druh se zjistí z programu), .sc8 SUPER-CHIP, .xo8 XO-CHIP, .mc8 MegaChip, .ch10 CHIP-10, .c8x CHIP-8X, .c8e CHIP-8E, .hc8 program se strojovým kódem COSMAC VIP, .c8tp režim 64x64 VIP, .c8b soubor s verzemi pro několik druhů. Kazeta Octo (.gif) a zdrojový soubor Octo (.8o) se přeloží při spuštění projektu; zdrojový soubor, který zahrnuje jiné soubory, se nepodporuje. Soubor .bin, .ram nebo .vip se načte do holého COSMAC VIP bez CHIP-8. Nic dalšího není potřeba: programy samotných strojů jsou součástí Cadmia."
+	}
+}

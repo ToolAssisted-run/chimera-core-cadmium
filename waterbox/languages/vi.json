@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 không phải là hạt giống số ngẫu nhiên mà lõi này nhận.",
+		"error.bad_speed": "%1 không phải là số lệnh mỗi khung hình mà lõi này nhận.",
+		"error.bad_variant": "\"%1\" không phải là biến thể mà lõi này có.",
+		"error.no_file": "Không có chương trình nào trong dự án.",
+		"error.not_compiled": "\"%1\" là một mã nguồn không biên dịch được.",
+		"error.not_loaded": "Không tải được \"%1\" như một chương trình %2. Chương trình quá lớn so với bộ nhớ của máy đó, hoặc tệp không đúng với phần mở rộng của nó.",
+		"error.not_program": "\"%1\" có %2 byte, không phải là một chương trình CHIP-8.",
+		"error.second_load": "Không tải được \"%1\" lần thứ hai.",
+		"error.which_variant": "\"%1\" không cho biết nó dành cho loại CHIP-8 nào: phần mở rộng của nó không thuộc các loại .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip. Hãy chọn Biến thể trong thiết lập.",
+		"setting.instructions_per_frame": "Lệnh mỗi khung hình",
+		"setting.instructions_per_frame.about": "Máy chạy bao nhiêu lệnh CHIP-8 trong một khung hình: tốc độ của nó. 0 dùng tốc độ riêng của biến thể, hoặc tốc độ mà Cadmium biết cho chương trình (15 cho CHIP-8 đầu tiên, 30 cho SUPER-CHIP, 1000 cho XO-CHIP). Một chương trình chạy quá chậm hoặc quá nhanh với bạn có thể được cho một số khác. Các biến thể \"vip\", \"cosmac-vip\", \"dream-6800\" và \"chip-8-strict\" giữ thời gian riêng của chúng và bỏ qua thiết lập này. Đây là một phần của máy, nên một bản ghi cần cùng một giá trị.",
+		"setting.random_seed": "Hạt giống ngẫu nhiên",
+		"setting.random_seed.about": "Con số mà số ngẫu nhiên của máy bắt đầu từ đó. Một máy thật bắt đầu từ bất cứ thứ gì đang có ở đó; khi con số này được cố định, cùng một dự án luôn chơi giống nhau, còn con số khác cho chương trình một lượt may mắn khác. Các biến thể \"vip\", \"cosmac-vip\", \"dream-6800\" và \"chip-8-strict\" tự tạo số ngẫu nhiên và bỏ qua thiết lập này. Đây là một phần của máy, nên một bản ghi cần cùng một giá trị.",
+		"setting.variant": "Biến thể",
+		"setting.variant.about": "Máy CHIP-8 nào chạy chương trình. Có nhiều loại CHIP-8, và một chương trình viết cho loại này thường chạy sai trên loại khác. \"auto\" để Cadmium tự quyết: nó nhận ra nhiều chương trình qua nội dung, và nếu không thì dựa vào phần mở rộng của tệp (.ch8, .sc8 cho SUPER-CHIP, .xo8 cho XO-CHIP, .mc8 cho MegaChip, và tương tự). Hãy tự chọn một loại khi chương trình chạy sai, hoặc khi tệp của nó không có phần mở rộng mà Cadmium biết. Các biến thể \"vip\", \"cosmac-vip\" và các biến thể \"dream-6800\" mô phỏng toàn bộ máy tính gốc chạy trình thông dịch CHIP-8 của chính nó, chậm hơn và trung thực nhất, và có thể chạy các chương trình chứa mã máy. \"chip-8-strict\" có thời gian chính xác của COSMAC VIP gốc mà không mô phỏng máy tính. Đây là một phần của máy, nên một bản ghi cần cùng một giá trị.",
+		"slot.program": "Chương trình",
+		"slot.program.help": "Chương trình CHIP-8. Phần mở rộng của nó cho biết nó dành cho loại CHIP-8 nào: .ch8 (loại được suy ra từ chương trình), .sc8 cho SUPER-CHIP, .xo8 cho XO-CHIP, .mc8 cho MegaChip, .ch10 cho CHIP-10, .c8x cho CHIP-8X, .c8e cho CHIP-8E, .hc8 cho một chương trình có mã máy COSMAC VIP trong đó, .c8tp cho chế độ 64x64 của VIP, .c8b cho một tệp chứa các phiên bản của nhiều loại. Một băng Octo (.gif) và một tệp mã nguồn Octo (.8o) được biên dịch khi dự án bắt đầu; tệp mã nguồn có chứa các tệp khác thì không được hỗ trợ. Một tệp .bin, .ram hoặc .vip được tải vào một COSMAC VIP trần không có CHIP-8. Không cần gì thêm: các chương trình của chính các máy là một phần của Cadmium."
+	}
+}

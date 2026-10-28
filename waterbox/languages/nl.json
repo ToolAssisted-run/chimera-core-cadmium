@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 is geen willekeurig startgetal dat deze core aanneemt.",
+		"error.bad_speed": "%1 is geen aantal instructies per frame dat deze core aanneemt.",
+		"error.bad_variant": "'%1' is geen variant die deze core heeft.",
+		"error.no_file": "Er staat geen programma in het project.",
+		"error.not_compiled": "'%1' is een bron die niet compileert.",
+		"error.not_loaded": "'%1' kon niet als %2-programma worden geladen. Het programma is te groot voor het geheugen van die machine, of het bestand is niet wat zijn extensie zegt.",
+		"error.not_program": "'%1' is %2 bytes, en dat is geen CHIP-8-programma.",
+		"error.second_load": "'%1' kon niet een tweede keer worden geladen.",
+		"error.which_variant": "'%1' zegt niet voor welk soort CHIP-8 het is: de extensie is niet een van .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip. Kies de Variant in de instellingen.",
+		"setting.instructions_per_frame": "Instructies per frame",
+		"setting.instructions_per_frame.about": "Hoeveel CHIP-8-instructies de machine in een frame uitvoert: zijn snelheid. 0 gebruikt de snelheid van de variant zelf, of de snelheid die Cadmium voor het programma kent (15 voor de eerste CHIP-8, 30 voor SUPER-CHIP, 1000 voor XO-CHIP). Een programma dat voor jou te traag of te snel loopt, kan een ander getal krijgen. De varianten \"vip\", \"cosmac-vip\", \"dream-6800\" en \"chip-8-strict\" houden hun eigen tijd aan en negeren dit. Het hoort bij de machine, dus een movie heeft dezelfde waarde nodig.",
+		"setting.random_seed": "Startgetal voor willekeurige getallen",
+		"setting.random_seed.about": "Het getal waarmee de willekeurige getallen van de machine beginnen. Een echte machine begint met wat er toevallig staat; met dit getal vast speelt hetzelfde project altijd hetzelfde, en een ander getal geeft een programma een andere reeks geluk. De varianten \"vip\", \"cosmac-vip\", \"dream-6800\" en \"chip-8-strict\" maken hun willekeurige getallen zelf en negeren dit. Het hoort bij de machine, dus een movie heeft dezelfde waarde nodig.",
+		"setting.variant": "Variant",
+		"setting.variant.about": "Welke CHIP-8-machine het programma draait. Er zijn veel soorten CHIP-8, en een programma dat voor de ene is geschreven, gedraagt zich op een andere vaak verkeerd. \"auto\" laat Cadmium kiezen: het kent veel programma's aan hun inhoud, en anders kijkt het naar de extensie van het bestand (.ch8, .sc8 voor SUPER-CHIP, .xo8 voor XO-CHIP, .mc8 voor MegaChip, enzovoort). Kies er zelf een als een programma verkeerd draait, of als het bestand een extensie heeft die Cadmium niet kent. De varianten \"vip\", \"cosmac-vip\" en de \"dream-6800\"-varianten emuleren de hele originele computer die zijn eigen CHIP-8-interpreter draait; dat is trager en het meest getrouw, en het kan programma's draaien die machinecode bevatten. \"chip-8-strict\" heeft de exacte timing van de originele COSMAC VIP zonder de computer na te bootsen. Het hoort bij de machine, dus een movie heeft dezelfde waarde nodig.",
+		"slot.program": "Programma",
+		"slot.program.help": "Het CHIP-8-programma. Zijn extensie zegt voor welk soort CHIP-8 het is: .ch8 (het soort wordt uit het programma afgeleid), .sc8 SUPER-CHIP, .xo8 XO-CHIP, .mc8 MegaChip, .ch10 CHIP-10, .c8x CHIP-8X, .c8e CHIP-8E, .hc8 een programma met COSMAC VIP-machinecode erin, .c8tp de 64x64-modus van de VIP, .c8b een bestand met versies voor meerdere soorten. Een Octo-cartridge (.gif) en een Octo-bronbestand (.8o) worden gecompileerd als het project start; een bronbestand dat andere bestanden insluit, wordt niet ondersteund. Een .bin-, .ram- of .vip-bestand wordt in een kale COSMAC VIP geladen zonder CHIP-8. Verder is niets nodig: de eigen programma's van de machines horen bij Cadmium."
+	}
+}

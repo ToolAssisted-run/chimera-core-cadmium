@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1, bu çekirdeğin kabul ettiği bir rastgele tohum değil.",
+		"error.bad_speed": "%1, bu çekirdeğin kabul ettiği bir kare başına komut sayısı değil.",
+		"error.bad_variant": "'%1', bu çekirdeğin sahip olduğu bir varyant değil.",
+		"error.no_file": "Projede program yok.",
+		"error.not_compiled": "'%1', derlenmeyen bir kaynak.",
+		"error.not_loaded": "'%1', %2 programı olarak yüklenemedi. Program o makinenin belleği için çok büyük ya da dosya, uzantısının dediği şey değil.",
+		"error.not_program": "'%1' %2 bayt, bu bir CHIP-8 programı değil.",
+		"error.second_load": "'%1' ikinci kez yüklenemedi.",
+		"error.which_variant": "'%1' hangi CHIP-8 için olduğunu söylemiyor: uzantısı .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip değerlerinden biri değil. Ayarlarda Varyant'ı seçin.",
+		"setting.instructions_per_frame": "Kare Başına Komut",
+		"setting.instructions_per_frame.about": "Makinenin bir karede çalıştırdığı CHIP-8 komut sayısı: hızı. 0, varyantın kendi hızını ya da Cadmium'un programa göre bildiği hızı kullanır (ilk CHIP-8 için 15, SUPER-CHIP için 30, XO-CHIP için 1000). Bir program size göre çok yavaş ya da çok hızlı çalışıyorsa başka bir sayı verilebilir. \"vip\", \"cosmac-vip\", \"dream-6800\" ve \"chip-8-strict\" varyantları kendi zamanlarını korur ve bunu yok sayar. Makinenin bir parçasıdır, bu yüzden bir film aynı değeri ister.",
+		"setting.random_seed": "Rastgele Tohum",
+		"setting.random_seed.about": "Makinenin rastgele sayılarının başladığı sayı. Gerçek bir makine ne varsa oradan başlar; bu sayı sabitken aynı proje her zaman aynı şekilde oynar, başka bir sayı programa başka bir şans denemesi verir. \"vip\", \"cosmac-vip\", \"dream-6800\" ve \"chip-8-strict\" varyantları rastgele sayılarını kendileri üretir ve bunu yok sayar. Makinenin bir parçasıdır, bu yüzden bir film aynı değeri ister.",
+		"setting.variant": "Varyant",
+		"setting.variant.about": "Programı hangi CHIP-8 makinesinin çalıştırdığı. Birçok CHIP-8 türü vardır ve biri için yazılmış bir program başka birinde sık sık yanlış davranır. \"auto\", Cadmium'un karar vermesini sağlar: birçok programı içeriğinden tanır, aksi halde dosya uzantısına bakar (.ch8; SUPER-CHIP için .sc8, XO-CHIP için .xo8, MegaChip için .mc8 ve benzeri). Bir program yanlış çalıştığında ya da dosyasının Cadmium'un bildiği bir uzantısı yoksa kendiniz seçin. \"vip\" varyantları, \"cosmac-vip\" ve \"dream-6800\" olanlar, özgün bilgisayarın tamamını kendi CHIP-8 yorumlayıcısını çalıştırarak öykünür: daha yavaştır, en sadık olanıdır ve makine kodu içeren programları çalıştırabilir. \"chip-8-strict\", bilgisayarı öykünmeden özgün COSMAC VIP'in tam zamanlamasını sağlar. Makinenin bir parçasıdır, bu yüzden bir film aynı değeri ister.",
+		"slot.program": "Program",
+		"slot.program.help": "CHIP-8 programı. Uzantısı hangi CHIP-8 türü için olduğunu söyler: .ch8 (tür programdan anlaşılır), .sc8 SUPER-CHIP, .xo8 XO-CHIP, .mc8 MegaChip, .ch10 CHIP-10, .c8x CHIP-8X, .c8e CHIP-8E, .hc8 içinde COSMAC VIP makine kodu olan bir program, .c8tp VIP'in 64x64 kipi, .c8b birkaç tür için sürümler içeren bir dosya. Bir Octo kartuşu (.gif) ve bir Octo kaynak dosyası (.8o) proje başladığında derlenir; başka dosyaları içeren bir kaynak dosya desteklenmez. Bir .bin, .ram ya da .vip dosyası, CHIP-8 olmadan çıplak bir COSMAC VIP'e yüklenir. Başka bir şey gerekmez: makinelerin kendi programları Cadmium'un parçasıdır."
+	}
+}

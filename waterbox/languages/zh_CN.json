@@ -1,0 +1,21 @@
+{
+	"texts": {
+		"error.bad_seed": "%1 不是本核心接受的随机种子。",
+		"error.bad_speed": "%1 不是本核心接受的每帧指令数。",
+		"error.bad_variant": "“%1”不是本核心支持的变体。",
+		"error.no_file": "项目中没有程序。",
+		"error.not_compiled": "“%1”是无法编译的源文件。",
+		"error.not_loaded": "无法将“%1”加载为 %2 程序。程序对该机器的内存来说太大，或文件与其扩展名不符。",
+		"error.not_program": "“%1”大小为 %2 字节，不是 CHIP-8 程序。",
+		"error.second_load": "无法第二次加载“%1”。",
+		"error.which_variant": "“%1”没有说明它是哪一种 CHIP-8：其扩展名不属于 .ch8 .sc8 .xo8 .mc8 .ch10 .c8x .c8e .hc8 .c8tp .c8b .8o .gif .bin .ram .vip 之一。请在设置中选择“变体”。",
+		"setting.instructions_per_frame": "每帧指令数",
+		"setting.instructions_per_frame.about": "机器在一帧中运行多少条 CHIP-8 指令，即它的速度。0 使用该变体自身的速度，或 Cadmium 为该程序所知的速度（原始 CHIP-8 为 15，SUPER-CHIP 为 30，XO-CHIP 为 1000）。如果程序对你来说运行太慢或太快，可以给它另一个数字。\"vip\"、\"cosmac-vip\"、\"dream-6800\" 和 \"chip-8-strict\" 这些变体保持其自身的时序，会忽略此设置。它属于机器的一部分，所以录像需要相同的值。",
+		"setting.random_seed": "随机种子",
+		"setting.random_seed.about": "机器的随机数从哪个数字开始。真实的机器从其中恰好存在的任何内容开始；此数字固定时，同一项目总是以相同的方式运行，换一个数字则程序会得到另一次运气。\"vip\"、\"cosmac-vip\"、\"dream-6800\" 和 \"chip-8-strict\" 这些变体自行生成随机数，会忽略此设置。它属于机器的一部分，所以录像需要相同的值。",
+		"setting.variant": "变体",
+		"setting.variant.about": "由哪一种 CHIP-8 机器运行程序。CHIP-8 有许多种，为一种制作的程序在另一种上往往会出错。\"auto\" 由 Cadmium 决定：它能根据内容识别许多程序，否则按文件扩展名判断（.ch8；.sc8 为 SUPER-CHIP；.xo8 为 XO-CHIP；.mc8 为 MegaChip，等等）。当程序运行有误，或其文件没有 Cadmium 所认识的扩展名时，请自行选择。\"vip\" 系列变体、\"cosmac-vip\" 以及 \"dream-6800\" 系列会模拟整台原版计算机并运行其自己的 CHIP-8 解释器，这更慢，但最忠实，并且能运行含有机器码的程序。\"chip-8-strict\" 具有原版 COSMAC VIP 的精确时序，但不模拟计算机。它属于机器的一部分，所以录像需要相同的值。",
+		"slot.program": "程序",
+		"slot.program.help": "CHIP-8 程序。其扩展名说明它是哪一种 CHIP-8 的程序：.ch8（种类由程序本身判断）、.sc8 为 SUPER-CHIP、.xo8 为 XO-CHIP、.mc8 为 MegaChip、.ch10 为 CHIP-10、.c8x 为 CHIP-8X、.c8e 为 CHIP-8E、.hc8 为内含 COSMAC VIP 机器码的程序、.c8tp 为 VIP 的 64x64 模式、.c8b 为保存多种类型版本的文件。Octo 卡带（.gif）和 Octo 源文件（.8o）会在项目启动时编译；包含其他文件的源文件不受支持。.bin、.ram 或 .vip 文件会被加载到一台没有 CHIP-8 的裸 COSMAC VIP 中。无需其他任何内容：各机器自身的程序已是 Cadmium 的一部分。"
+	}
+}
